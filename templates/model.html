@@ -1,0 +1,282 @@
+<html>
+{% extends "base.html" %}
+{% block title %}Model Performance{% endblock %}
+
+{% block content %}
+    <div class="header">
+    <h1>Model Performance</h1>
+        </div>
+    <div class="container-fluid">
+    <h2 style="color:#800000">
+        <br>What data was used?
+    </h2>
+    <p style="font-size:20px">
+        The data was used from this <b><a href="https://github.com/UCSD-AI4H/COVID-CT" target="_blank">github page</a></b>.
+        The dataset contained <b>349 CT images </b>containing clinical findings of COVID-19 from <b>216 patients</b>.
+        For this project I used <b>50 covid images</b> and<b> 50 non-covid images</b>. The train-test split was
+        <b>80:20</b>. Meaning,<b> 40 images </b> of each type were used for <b>training</b> and <b>10 each</b>
+        were used as a <b>validation dataset</b>.
+    </p>
+    <h2 style="color:#800000">
+        How was the model trained?
+    </h2>
+    <p style="font-size:20px">
+        To train the model, I used ResNet-18, an extremely deep CNN. To use the model for my project, I took
+        out the last layer from ResNet-18 and replaced it with my own. This is because ResNet-18 has 1000 outputs
+        in the final layer, while I only needed two, since this was a binary classification problem. In the below
+            Resnet model, if you scroll down to the bottom, you can see that for the last fc layer, out_features=2.
+    </p>
+<div class="row">
+    <div class="column">
+  <p>&nbsp &nbsp </p>
+  </div>
+    <div class="column">
+    <div id="bodydesc" style="width:300px; height: 250px; overflow-y: scroll; background-color:white;">
+
+            <p id="desc">
+Epoch 0/24<br>
+----------<br>
+train Loss: 0.7246 Acc: 0.4875<br>
+val Loss: 0.6945 Acc: 0.6000<br>
+
+Epoch 1/24<br>
+----------<br>
+train Loss: 0.6943 Acc: 0.6500<br>
+val Loss: 0.6317 Acc: 0.6500<br>
+
+Epoch 2/24<br>
+----------<br>
+train Loss: 0.5177 Acc: 0.7000<br>
+val Loss: 0.7010 Acc: 0.6500<br>
+
+Epoch 3/24<br>
+----------<br>
+train Loss: 0.4055 Acc: 0.7875<br>
+val Loss: 0.7157 Acc: 0.7000<br>
+
+Epoch 4/24<br>
+----------<br>
+train Loss: 0.7148 Acc: 0.6875<br>
+val Loss: 1.0226 Acc: 0.4500<br>
+
+Epoch 5/24<br>
+----------<br>
+train Loss: 0.6366 Acc: 0.6625<br>
+val Loss: 0.7384 Acc: 0.7500<br>
+
+Epoch 6/24<br>
+----------<br>
+train Loss: 0.7458 Acc: 0.7125<br>
+val Loss: 0.4577 Acc: 0.7500<br>
+
+Epoch 7/24<br>
+----------<br>
+train Loss: 0.4009 Acc: 0.8125<br>
+val Loss: 0.4198 Acc: 0.8500<br>
+
+Epoch 8/24<br>
+----------<br>
+train Loss: 0.3121 Acc: 0.9000<br>
+val Loss: 0.3843 Acc: 0.8500<br>
+
+Epoch 9/24<br>
+----------<br>
+train Loss: 0.3626 Acc: 0.8250<br>
+val Loss: 0.3918 Acc: 0.8500<br>
+
+Epoch 10/24<br>
+----------<br>
+train Loss: 0.5512 Acc: 0.7125<br>
+val Loss: 0.3439 Acc: 0.8500<br>
+
+Epoch 11/24<br>
+----------<br>
+train Loss: 0.5616 Acc: 0.6750<br>
+val Loss: 0.4188 Acc: 0.7500<br>
+
+Epoch 12/24<br>
+----------<br>
+train Loss: 0.2703 Acc: 0.9000<br>
+val Loss: 0.3873 Acc: 0.8000<br>
+
+Epoch 13/24<br>
+----------<br>
+train Loss: 0.4943 Acc: 0.7625<br>
+val Loss: 0.4397 Acc: 0.7500<br>
+
+Epoch 14/24<br>
+----------<br>
+train Loss: 0.4500 Acc: 0.8000<br>
+val Loss: 0.4522 Acc: 0.7500<br>
+
+Epoch 15/24<br>
+----------<br>
+train Loss: 0.4603 Acc: 0.8000<br>
+val Loss: 0.4261 Acc: 0.7000<br>
+
+Epoch 16/24<br>
+----------<br>
+train Loss: 0.3788 Acc: 0.8125<br>
+val Loss: 0.4143 Acc: 0.8000<br>
+
+Epoch 17/24<br>
+----------<br>
+train Loss: 0.4239 Acc: 0.7875<br>
+val Loss: 0.3895 Acc: 0.8000<br>
+
+Epoch 18/24<br>
+----------<br>
+train Loss: 0.4506 Acc: 0.7875<br>
+val Loss: 0.3669 Acc: 0.9000<br>
+
+Epoch 19/24<br>
+----------<br>
+train Loss: 0.3185 Acc: 0.8625<br>
+val Loss: 0.3798 Acc: 0.9000<br>
+
+Epoch 20/24<br>
+----------<br>
+train Loss: 0.3792 Acc: 0.8125<br>
+val Loss: 0.3868 Acc: 0.9000<br>
+
+Epoch 21/24<br>
+----------<br>
+train Loss: 0.4036 Acc: 0.8500<br>
+val Loss: 0.3844 Acc: 0.8000<br>
+
+Epoch 22/24<br>
+----------<br>
+train Loss: 0.3232 Acc: 0.8500<br>
+val Loss: 0.4081 Acc: 0.8500<br>
+
+Epoch 23/24<br>
+----------<br>
+train Loss: 0.3974 Acc: 0.8000<br>
+val Loss: 0.4508 Acc: 0.8000<br>
+
+Epoch 24/24<br>
+----------<br>
+train Loss: 0.4414 Acc: 0.7875<br>
+val Loss: 0.4151 Acc: 0.8000<br>
+<br>
+Training complete in 10m 34s<br>
+Best val Acc: 0.900000<br>
+            </p>
+    </div>
+        <p> <strong>Training of Model</strong> </p>
+    </div>
+    <div class="column">
+  <p>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp</p>
+  </div>
+    <div class="column">
+    <div id="bodydesc" style="width:700px; height: 250px; overflow-y: scroll; background-color:white;">
+
+        <p id="desc">
+            ResNet(<br>
+  (conv1): Conv2d(3, 64, kernel_size=(7, 7), stride=(2, 2), padding=(3, 3), bias=False)<br>
+  (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+  (relu): ReLU(inplace=True)<br>
+  (maxpool): MaxPool2d(kernel_size=3, stride=2, padding=1, dilation=1, ceil_mode=False)<br>
+  (layer1): Sequential(<br>
+    (0): BasicBlock(<br>
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (relu): ReLU(inplace=True)<br>
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+    )<br>
+    (1): BasicBlock(<br>
+      (conv1): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn1): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (relu): ReLU(inplace=True)<br>
+      (conv2): Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn2): BatchNorm2d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+    )<br>
+  )<br>
+  (layer2): Sequential(<br>
+    (0): BasicBlock(<br>
+      (conv1): Conv2d(64, 128, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)<br>
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (relu): ReLU(inplace=True)<br>
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (downsample): Sequential(<br>
+        (0): Conv2d(64, 128, kernel_size=(1, 1), stride=(2, 2), bias=False)<br>
+        (1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      )<br>
+    )<br>
+    (1): BasicBlock(<br>
+      (conv1): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn1): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (relu): ReLU(inplace=True)<br>
+      (conv2): Conv2d(128, 128, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn2): BatchNorm2d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+    )<br>
+  )<br>
+  (layer3): Sequential(<br>
+    (0): BasicBlock(<br>
+      (conv1): Conv2d(128, 256, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)<br>
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (relu): ReLU(inplace=True)<br>
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (downsample): Sequential(<br>
+        (0): Conv2d(128, 256, kernel_size=(1, 1), stride=(2, 2), bias=False)<br>
+        (1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      )<br>
+    )<br>
+    (1): BasicBlock(<br>
+      (conv1): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn1): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (relu): ReLU(inplace=True)<br>
+      (conv2): Conv2d(256, 256, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn2): BatchNorm2d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+    )<br>
+  )<br>
+  (layer4): Sequential(<br>
+    (0): BasicBlock(<br>
+      (conv1): Conv2d(256, 512, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)<br>
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (relu): ReLU(inplace=True)<br>
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (downsample): Sequential(<br>
+        (0): Conv2d(256, 512, kernel_size=(1, 1), stride=(2, 2), bias=False)<br>
+        (1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      )<br>
+    )<br>
+    (1): BasicBlock(<br>
+      (conv1): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn1): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+      (relu): ReLU(inplace=True)<br>
+      (conv2): Conv2d(512, 512, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), bias=False)<br>
+      (bn2): BatchNorm2d(512, eps=1e-05, momentum=0.1, affine=True, track_running_stats=True)<br>
+    )<br>
+  )<br>
+  (avgpool): AdaptiveAvgPool2d(output_size=(1, 1))<br>
+  (fc): Linear(in_features=512, out_features=2, bias=True)<br>
+)
+        </p>
+    </div>
+        <p> <strong>Model Used (ResNet-18)</strong> </p>
+    </div>
+</div>
+<p style="font-size:20px">
+    The model code can be found <a href={{Notebook}} target="_blank"> here</a>.<br>
+    The other factors used to train the model were:
+<ul>
+    <li style="font-size:20px"><strong>Cross Entropy Loss</strong> as the Loss Function</li>
+    <li style="font-size:20px"><strong>Stochastic Gradient Descent (SGD)</strong> as the Optimizer</li>
+    <li style="font-size:20px"><strong>Learning Rate Scheduler</strong></li>
+    <li style="font-size:20px"><strong>Batch size=4</strong></li>
+    <li style="font-size:20px"><strong>Number of Epochs=25</strong></li>
+</ul>
+</p>
+<p style="font-size:20px">
+    It took 10 minutes 34 seconds to train the model on CPU, and the best validation accuracy was
+    90%.
+</p>
+</div>
+{% endblock %}
+
+</html>

@@ -1,0 +1,68 @@
+<html>
+{% extends "base.html" %}
+{% block title %}CNN{% endblock %}
+
+{% block content %}
+<div class="header">
+<h1 >Convolutional Neural Network (CNN)</h1>
+</div>
+    <div class="container-fluid">
+<h2 style="color:#800000"><br>Introduction</h2>
+<p style="font-size:20px">
+    A Convolutional Neural Network (CNN), sometimes referred to as a ConvNet, is the most well-known image
+    recognition and classification algorithm.  CNNs were one of the key innovations that led to the deep
+    neural network renaissance in computer vision, which is a subset of machine learning.
+</p>
+<h2 style="color:#800000">Architecture<br></h2>
+<p class="aligncenter">
+<img src="{{cnn_image}}" style="width:60%;">
+</p>
+<p style="font-size:20px">
+    <br>A typical CNN consists of a combination of convolutional, pooling, and fully-connected layers.
+</p>
+<h5>1. Convolutional Layer</h5>
+<p style="font-size:20px">
+    This layer is the first layer that is used to extract the various features from the input images.
+    In this layer, the mathematical operation of convolution is performed between the input image and a
+    filter of a particular size MxM. By sliding the filter over the input image, the dot product is taken
+    between the filter and the parts of the input image with respect to the size of the filter (MxM).
+</p>
+<h5>2. Pooling Layer</h5>
+<p style="font-size:20px">
+    In most cases, a Convolutional Layer is followed by a Pooling Layer. The primary aim of this layer is to
+    decrease the size of the convolved feature map to reduce the computational costs. This is performed by
+    decreasing the connections between layers and independently operates on each feature map. Depending upon
+    method used, there are several types of Pooling operations.<br>
+    In Max Pooling, the largest element is taken from feature map. Average Pooling calculates the average of the
+    elements in a predefined sized Image section. The total sum of the elements in the predefined section is
+    computed in Sum Pooling. The Pooling Layer usually serves as a bridge between the Convolutional Layer and
+    the FC Layer.
+</p>
+<h5>3. Fully Connected Layer</h5>
+<p style="font-size:20px">
+    The Fully Connected (FC) layer consists of the weights and biases along with the neurons and is used to connect
+    the neurons between two different layers. These layers are usually placed before the output layer and form the
+    last few layers of a CNN Architecture.<br>
+    In this, the input image from the previous layers are flattened and fed to the FC layer. The flattened vector
+    then undergoes few more FC layers where the mathematical functions operations usually take place. In this
+    stage, the classification process begins to take place.
+</p>
+<h2 style="color:#800000">Transfer Learning</h2>
+<p style="font-size:20px">
+    Transfer learning is the reuse of a pre-trained model on a new problem. It's currently very popular in deep
+    learning because it can train deep neural networks with comparatively little data.<br>
+    In this project I used transfer learning to reuse a better pre-trained model up till the last fully-connected
+    layer, which is responsible for the output. So, instead of hundreds of neurons in the last layer, we
+    only have two. One gives the probability of covid and other of no covid.
+</p>
+<h2 style="color:#800000">ResNet-18</h2>
+<p style="font-size:20px">
+    ResNet, short for Residual Network is a specific type of neural network that was introduced in 2015 by Kaiming
+    He, Xiangyu Zhang, Shaoqing Ren and Jian Sun in their paper “Deep Residual Learning for Image Recognition”.<br>
+    ResNet-18 is an extremely deep CNN, which I have used in this Project using transfer learning.
+
+</p>
+</div>
+{% endblock %}
+
+</html>

@@ -1,0 +1,43 @@
+<html>
+{% extends "base.html" %}
+{% block title %}Prediction{% endblock %}
+
+{% block body %}
+<div class="header">
+<h1>Your Prediction</h1>
+    </div>
+    {% if filename %}
+<p class="aligncenter"><br>
+ <img src="{{ url_for('send_file', filename=filename) }}" width="320" height="240">
+</p>
+{% endif %}
+
+    <div class="container-fluid">
+
+{% if result %}
+<p class="aligncenter">
+    <b>Prediction: Covid Positive</b>
+</p>
+{% else %}
+<p class="aligncenter">
+    <b>Prediction: Covid Negative</b>
+</p>
+{% endif %}
+<p style="font-size:20px">
+    <The above prediction can be extremely helpful in early diagnosis of Covid-19. The model has an accuracy
+        of around 90% making it reliable and fast.
+</p>
+<p style="font-size:20px">
+    The Model Accuracy can be further improved by:
+    <ul>
+    <li>Further tuning the hyperparameters of the model </li>
+    <li>Using a larger datatset to train the model</li>
+    <li>Using higher resolution images</li>
+    <li>Using GPU environment</li>
+
+</ul>
+</p>
+</div>
+{% endblock %}
+
+</html>

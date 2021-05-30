@@ -1,0 +1,29 @@
+<html>
+{% extends "base.html" %}
+{% block title %}Prediction{% endblock %}
+
+{% block content %}
+<div class="header">
+    <h1>Covid Prediction</h1>
+</div>
+    <div class="container-fluid">
+    <p style="font-size:20px">
+        <br>Please enter an image of a<b> CT-scan of lungs</b>. Please upload file from:
+        <b>'.\static\photos' directory.</b> This can be found in the project file submitted.
+    </p>
+{% endblock %}
+
+{% block body %}
+      <form action = "" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+
+    {% if filename %}
+ <img src="{{ url_for('send_file', filename=filename) }}" width="100" height="100">
+{% endif %}
+</div>
+{% endblock %}
+
+</html>

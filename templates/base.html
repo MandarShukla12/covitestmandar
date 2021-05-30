@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>{% block title %}{% endblock %} - CoviTest</title>
+    <style>
+
+    </style>
+</head>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('view_home') }}"><b>Home </b><span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('view_cnn') }}"><b>CNN</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('view_model') }}"><b>Model-Performance</b></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('upload_file') }}"><b>Prediction</b></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+
+<div id="content">
+
+    {% block content %}{% endblock %}
+</div>
+<style>
+.header {
+  padding: 60px;
+  text-align: center;
+  background: #800000;
+  color: white;
+  font-size: 30px;
+}
+.aligncenter {
+    text-align: center;
+}
+</style>
+<body style="background-color:#C2DFFF;">
+{% block body %}{% endblock %}
+</body>
+
+
+</html>
+
